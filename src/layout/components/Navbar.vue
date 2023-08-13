@@ -3,7 +3,7 @@
     <div class="navbar-content">
       <!-- 1.左边部分 -->
       <div class="left-menu">
-        <div class="title">商家后台</div>
+        <div class="title">xxw-shop 商家端</div>
       </div>
 
       <!-- 2.右边部分 -->
@@ -28,10 +28,7 @@
         <el-dropdown class="avatar-container" trigger="click">
           <div class="avatar-wrapper">
             <div class="img-box">
-              <img
-                :src="avatar + '?imageView2/1/w/80/h/80'"
-                class="user-avatar"
-              >
+              <img :src="resourcesUrl+avatar" class="user-avatar">
             </div>
             <div class="user-name">{{ name }}</div>
             <i class="el-icon-caret-bottom" />
@@ -54,7 +51,8 @@ export default {
   data() {
     return {
       isHavePlatformNotice: true, // 是否有新的平台公告
-      isHaveNewsBox: true // 是否有新消息
+      isHaveNewsBox: true, // 是否有新消息
+      resourcesUrl: process.env.VUE_APP_RESOURCES_URL
     }
   },
   computed: {
