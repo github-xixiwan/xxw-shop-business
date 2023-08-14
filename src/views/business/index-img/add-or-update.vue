@@ -79,7 +79,7 @@ export default {
         imgType: 0,
         status: 1,
         spuId: null,
-        spu: {} // 商品列表
+        spu: { } // 商品列表
       },
       relatedSpu: 0,
       resourcesUrl: process.env.VUE_APP_RESOURCES_URL,
@@ -114,8 +114,8 @@ export default {
         }
         api.get(imgId).then(data => {
           this.dataForm = data
-          this.dataForm.spu.spuName = this.dataForm.spu.name
-          this.spus = data.spus || []
+          // this.dataForm.spu.spuName = data.spu ? data.spu.name : ''
+          this.spu = data.spu
           this.relatedSpu = data.spuId ? 1 : 0
         })
       })

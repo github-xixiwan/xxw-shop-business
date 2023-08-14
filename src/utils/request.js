@@ -54,7 +54,7 @@ service.interceptors.response.use(
     // A00003 无法读取获取请求参数
     if (res.code === 'A00001' || res.code === 'A00003' || res.code === 'A00005') {
       Message({
-        message: res.msg || 'Error',
+        message: res.message || 'Error',
         type: 'error',
         duration: 1.5 * 1000
       })
@@ -73,7 +73,7 @@ service.interceptors.response.use(
         })
       } else {
         Message({
-          message: res.msg || 'Error',
+          message: res.message || 'Error',
           type: 'error',
           duration: 1.5 * 1000
         })
