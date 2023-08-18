@@ -28,7 +28,7 @@
         <el-dropdown class="avatar-container" trigger="click">
           <div class="avatar-wrapper">
             <div class="img-box">
-              <img :src="resourcesUrl+avatar" class="user-avatar">
+              <img :src="avatar?resourcesUrl+avatar:require('../../assets/images/head-sculpture.png')" class="user-avatar">
             </div>
             <div class="user-name">{{ name }}</div>
             <i class="el-icon-caret-bottom" />

@@ -24,7 +24,7 @@
       <!-- 头像 -->
       <el-table-column :label="$t('business.shopUser.avatar')" prop="avatar" align="center" width="100">
         <template slot-scope="{row}">
-          <el-image :src="resourcesUrl + row.avatar" fit="contain" />
+          <el-image :src="row.avatar?resourcesUrl+row.avatar:''" fit="contain" />
         </template>
       </el-table-column>
       <!-- 员工编号 -->
