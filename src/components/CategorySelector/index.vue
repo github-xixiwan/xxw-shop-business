@@ -139,7 +139,6 @@ export default {
       this.parentId = this.firstCategorys.id = categoryId
       this.secondCategorys.id = 0
       if(this.showthreeCategorys) this.threeCategorys.id = 0
-
       if (this.isCreateCategory || (!this.isCreateCategory && this.secondCategorys.dataList.length == 0)) { // 创建分类
         this.buttonHighlight = true
       } else {
@@ -161,7 +160,6 @@ export default {
       } else {
         this.buttonHighlight = false
       }
-      console.log('buttonHighlight：', this.buttonHighlight)
     },
     // 选中第三个分类
     selectThreeCategorys(categoryId, index) {

@@ -175,7 +175,7 @@
                           class="item"
                         >
                           <div class="img">
-                            <img :src="orderItem.pic" alt>
+                            <img :src="resourcesUrl+orderItem.pic" alt>
                             <div class="number">×{{ orderItem.count }}</div>
                           </div>
                           <div class="name">{{ orderItem.spuName }}</div>
@@ -252,7 +252,7 @@
                   <template slot-scope="scope">
                     <div class="df">
                       <img
-                        :src="scope.row.pic"
+                        :src="resourcesUrl+scope.row.pic"
                         width="60"
                         height="60"
                       >
@@ -312,10 +312,6 @@
                 {{ dataForm.createTime }} {{ dataForm.nickName }}
                 {{ $t("order.order.createOrder") }}
               </div>
-              <div v-if="dataForm.updateTime" class="log-cont">
-                {{ dataForm.updateTime }} {{ dataForm.nickName }}
-                {{ $t("order.order.orderUpdate") }}
-              </div>
               <div v-if="dataForm.payTime" class="log-cont">
                 {{ dataForm.payTime }} {{ dataForm.nickName }}
                 {{ $t("order.order.payment") }}
@@ -327,6 +323,10 @@
               <div v-if="dataForm.cancelTime" class="log-cont">
                 {{ dataForm.cancelTime }} {{ dataForm.nickName }}
                 {{ $t("order.order.cancelOrder") }}
+              </div>
+              <div v-if="dataForm.updateTime" class="log-cont">
+                {{ dataForm.updateTime }} {{ dataForm.nickName }}
+                {{ $t("order.order.orderUpdate") }}
               </div>
             </div>
           </div>
