@@ -150,7 +150,7 @@
           <el-table-column class="table-item" label="商品信息" width="100" fixed>
             <template slot-scope="scope">
               <div class="prod-name-box can-edit-item">
-                <img class="prod-img" :src="(scope.row.mainImgUrl).indexOf('http')===-1 ? resourcesUrl + scope.row.mainImgUrl : scope.row.mainImgUrl">
+                <img class="prod-img" :src="scope.row.mainImgUrl">
                 <el-popover
                   placement="top-start"
                   trigger="hover"

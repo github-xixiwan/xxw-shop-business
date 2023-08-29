@@ -285,7 +285,7 @@ export default {
             if (img.indexOf('http://') === 0 || img.indexOf('https://') === 0) {
               this.brandImgUrl = img
             } else {
-              this.brandImgUrl = this.resourcesUrl + img
+              this.brandImgUrl = img
             }
           }
           this.brandName = data.brand?.name // 品牌名字
@@ -882,6 +882,14 @@ export default {
      * 表单提交
      */
     dataFormSubmit(dataForm) {
+      dataForm.mainImgUrl = this.dataForm.mainImgUrl.substring(this.dataForm.mainImgUrl.lastIndexOf('//') + 1, this.dataForm.mainImgUrl.lastIndexOf('?'))
+      const splitImgUrls = this.dataForm.imgUrls.split(',');
+      const newArr = [];
+      splitImgUrls.forEach(item => {
+        item = item.substring(item.lastIndexOf('//') + 1, item.lastIndexOf('?'))
+        newArr.push(item)
+      })
+      dataForm.imgUrls = newArr.join(',')
       const request = this.dataForm.spuId ? api.update(dataForm) : api.save(dataForm)
       request.then(data => {
         this.$message({

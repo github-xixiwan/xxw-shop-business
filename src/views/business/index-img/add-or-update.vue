@@ -31,7 +31,7 @@
           <el-radio v-model="relatedSpu" :label="1">商品</el-radio>
           <div v-if="relatedSpu === 1 && dataForm.spu && dataForm.spu.spuId">
             <el-card :body-style="{ padding: '0px' }" style="height: 160px;width: 120px">
-              <img :src="(dataForm.spu.mainImgUrl).indexOf('http')===-1 ? resourcesUrl + dataForm.spu.mainImgUrl : dataForm.spu.mainImgUrl" style="height:104px;width:100%">
+              <img :src="dataForm.spu.mainImgUrl" style="height:104px;width:100%">
               <div class="card-prod-bottom">
                 <span class="card-prod-name">{{ dataForm.spu.spuName }}</span>
                 <el-button
@@ -179,6 +179,7 @@ export default {
         if (this.relatedSpu === 0) {
           this.dataForm.spuId = ''
         }
+        this.dataForm.imgUrl = this.dataForm.imgUrl.substring(this.dataForm.imgUrl.lastIndexOf('//') + 1, this.dataForm.imgUrl.lastIndexOf('?'))
         const dataForm = JSON.parse(JSON.stringify(this.dataForm))
         dataForm.spu = undefined
         const request = this.dataForm.imgId ? api.update(dataForm) : api.save(dataForm)

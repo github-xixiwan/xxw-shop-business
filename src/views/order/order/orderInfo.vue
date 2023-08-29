@@ -175,7 +175,7 @@
                           class="item"
                         >
                           <div class="img">
-                            <img :src="resourcesUrl+orderItem.pic" alt>
+                            <img :src="orderItem.pic" alt>
                             <div class="number">×{{ orderItem.count }}</div>
                           </div>
                           <div class="name">{{ orderItem.spuName }}</div>
@@ -252,7 +252,7 @@
                   <template slot-scope="scope">
                     <div class="df">
                       <img
-                        :src="resourcesUrl+scope.row.pic"
+                        :src="scope.row.pic"
                         width="60"
                         height="60"
                       >

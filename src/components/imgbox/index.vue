@@ -58,7 +58,7 @@
               </div>
               <div class="img-item" v-for="(img, itemIndex) in imgRes" :key="itemIndex">
                 <div class="thumb-wp" @click="onClickListImage(img)">
-                  <img :src="(img.filePath).indexOf('http')===-1 ? resourcesUrl + img.filePath : img.filePath" alt="img.name" />
+                  <img :src="img.filePath" alt="img.name" />
                 </div>
                 <div class="title" @click="onClickListImage(img)">{{img.fileName}}</div>
                 <div class="operate">
@@ -568,16 +568,20 @@ export default {
      * @param img object
      */
     onClickListImage(img) {
-      console.log(img)
+      // 单选图片
       if (this.type) {
         this.clearListSelected()
         this.images = []
         this.disabled = false
       } else {
+        // 多选图片-如果已选中则取消选中
         var imgIndex = this.selectedImageIndex(img)
+        if (imgIndex >= 0) {
           // 取消图片已选状态
           img.selected = false
           this.images.splice(imgIndex, 1)
+          return
+        }
       }
       if (!this.type && this.images.length >= this.limit) {
         this.message(this.$t('biz.imgbox.superiorLimit'))

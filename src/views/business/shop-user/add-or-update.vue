@@ -96,6 +96,7 @@ export default {
     dataFormSubmit() {
       this.$refs.dataForm.validate(valid => {
         if (valid) {
+          this.dataForm.avatar = this.dataForm.avatar.substring(this.dataForm.avatar.lastIndexOf('//') + 1, this.dataForm.avatar.lastIndexOf('?'))
           const request = this.dataForm.shopUserId ? api.update(this.dataForm) : api.save(this.dataForm)
           request.then(data => {
             this.$message({

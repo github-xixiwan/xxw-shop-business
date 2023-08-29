@@ -76,7 +76,7 @@
           label="商品图片"
         >
           <template slot-scope="{row}">
-            <img :src="(row.mainImgUrl).indexOf('http')===-1 ? resourcesUrl + row.mainImgUrl : row.mainImgUrl" width="100" height="100" />
+            <img :src="row.mainImgUrl" width="100" height="100" />
           </template>
         </el-table-column>
         <el-table-column

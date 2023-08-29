@@ -206,7 +206,7 @@
                     class="items name"
                   >
                     <div class="prod-image">
-                      <img :src="resourcesUrl+orderItem.pic">
+                      <img :src="orderItem.pic">
                     </div>
                     <div class="prod-name">
                       <dir class="prod-con">

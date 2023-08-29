@@ -59,7 +59,7 @@ export default {
       if (this.value.indexOf('http://') === 0 || this.value.indexOf('https://') === 0) {
         return this.value
       }
-      return this.resourcesUrl + this.value
+      return this.value
     },
     openImg() {
       this.visible = true

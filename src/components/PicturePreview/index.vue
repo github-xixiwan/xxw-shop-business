@@ -7,7 +7,7 @@
     :lock-scroll="true"
     class="img-preview" width="650px">
     <div class="img-box">
-      <img :src="(imgUrl).indexOf('http')===-1 ? resourcesUrl + imgUrl : imgUrl" class="img">
+      <img :src="imgUrl" class="img">
     </div>
   </el-dialog>
 </template>

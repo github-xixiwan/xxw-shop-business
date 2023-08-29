@@ -54,7 +54,7 @@
       <!-- 商品介绍主图 多个图片逗号分隔 -->
       <el-table-column :label="$t('goods.spu.imgUrls')" prop="imgUrls" align="center">
         <template slot-scope="{row}">
-          <img :src="(row.imgUrls).indexOf('http')===-1 ? resourcesUrl + row.imgUrls : row.imgUrls">
+          <img :src="row.imgUrls">
         </template>
       </el-table-column>
       <!-- 售价，整数方式保存 -->

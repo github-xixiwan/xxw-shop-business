@@ -55,7 +55,7 @@
 
         <el-table-column align="center" width="140" label="品牌图片">
           <template slot-scope="{row}">
-            <img v-if="row.imgUrl" :src="(row.imgUrl).indexOf('http')===-1 ? resourcesUrl + row.imgUrl : row.imgUrl" class="brand-img" />
+            <img v-if="row.imgUrl" :src="row.imgUrl" class="brand-img" />
           </template>
         </el-table-column>
 
@@ -149,7 +149,7 @@ export default {
         if (brandIndex === -1) {
           brands.push({
             brandId: item.brandId, brandName: item.name,
-            brandImgUrl: (item.imgUrl).indexOf('http') === -1 ? this.resourcesUrl + item.imgUrl : item.imgUrl
+            brandImgUrl: (item.imgUrl).indexOf('http') === -1 ? item.imgUrl : item.imgUrl
           })
         }
       })

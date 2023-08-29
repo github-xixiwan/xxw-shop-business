@@ -50,7 +50,7 @@ export default {
       let imageArray = imagePath.split(',')
       var data = []
       imageArray.forEach(img => {
-        data.push(this.resourcesUrl + img)
+        data.push(img)
       })
       this.imgUrls = ''
       this.dialogVisible = false
@@ -60,7 +60,7 @@ export default {
     //   let imageArray = this.imgUrls.split(',')
     //   var data = []
     //   imageArray.forEach(img => {
-    //     data.push(this.resourcesUrl + img)
+    //     data.push(img)
     //   })
     //   this.imgUrls = ''
     //   this.dialogVisible = false

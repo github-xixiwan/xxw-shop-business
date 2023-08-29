@@ -19,7 +19,7 @@
       <!-- 图片 -->
       <el-table-column label="图片" prop="imgUrl" align="center" width="300px">
         <template slot-scope="{row}">
-          <img :src="(row.imgUrl).indexOf('http')===-1 ? resourcesUrl + row.imgUrl : row.imgUrl" class="img">
+          <img :src="row.imgUrl" class="img">
         </template>
       </el-table-column>
       <!-- 顺序 -->
